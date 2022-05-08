@@ -90,12 +90,15 @@ var isValid = function(board) {
             const boxNum = 3 * Math.floor(i / 3) + Math.floor(j / 3)
 
             const row = `row: ${i}, value${cell}`
-            console.log(row)
+            const col = `col: ${j}, value${cell}`
+            const box = `box: ${boxNum}, value${cell}`
 
-            // if(rows[i].has(cell) || cols[j].has(cell) || boxes[boxNum].has(cell)) return false
-            // rows[i].add(cell)
-            // cols[j].add(cell)
-            // boxes[boxNum].add(cell)
+
+            if(set.has(row) || set.has(col) || set.has(box)) return false
+            
+            set.add(row)
+            set.add(col)
+            set.add(box)
         }
     }
 
